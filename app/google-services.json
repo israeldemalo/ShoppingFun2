@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "771876047757",
+    "firebase_url": "https://shoppingfun-ad3c0.firebaseio.com",
+    "project_id": "shoppingfun-ad3c0",
+    "storage_bucket": "shoppingfun-ad3c0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:771876047757:android:f6cb79265dcc1684",
+        "android_client_info": {
+          "package_name": "israel.shoppingfun"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "771876047757-65tbqkc5f50oi7ogo45o7abcdq6kugm0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "israel.shoppingfun",
+            "certificate_hash": "699c0e80c3467094815856f224bb72dfc396424e"
+          }
+        },
+        {
+          "client_id": "771876047757-cn7glnef8es05dac3je3s1tvedh6pq89.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhbqPE8aMHkoqH6rUPf7pJDhJ9JMR9NcQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "771876047757-cn7glnef8es05dac3je3s1tvedh6pq89.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
