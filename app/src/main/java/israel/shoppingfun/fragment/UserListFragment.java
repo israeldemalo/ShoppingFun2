@@ -50,7 +50,7 @@ public class UserListFragment extends Fragment {
 
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
 
-        if (currentUser == null) {
+        if (currentUser == null){
             Log.e("Tomer", "Null user");
             return view;
         }
@@ -75,7 +75,7 @@ public class UserListFragment extends Fragment {
     }
 
     //2)FirebaseRecyclerAdapter
-    public static class UserListAdapter extends FirebaseRecyclerAdapter<UserList, UserListAdapter.UserListViewHolder> {
+    public static class UserListAdapter extends FirebaseRecyclerAdapter<UserList, UserListAdapter.UserListViewHolder>{
         Fragment fragment;
 
         public UserListAdapter(Query query, Fragment fragment) {
@@ -83,11 +83,9 @@ public class UserListFragment extends Fragment {
             this.fragment = fragment;
         }
 
-
         @Override
-        public UserListViewHolder onCreateViewHolder(ViewGroup parent, int ViewType) {
-
-            UserListViewHolder vh = super.onCreateViewHolder(parent, ViewType);
+        public UserListViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+            UserListViewHolder vh =  super.onCreateViewHolder(parent, viewType);
             vh.userListsFragment = fragment;
             return vh;
         }
@@ -97,9 +95,7 @@ public class UserListFragment extends Fragment {
             viewHolder.tvListName.setText(model.getName());
             Glide.with(fragment.getContext()).load(model.getOwnerImage()).into(viewHolder.ivProfile);
             viewHolder.model = model;
-            viewHolder.userListsFragment = fragment;
         }
-
         //1)ViewHolder
         public static class UserListViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
             //Properties:
@@ -109,6 +105,7 @@ public class UserListFragment extends Fragment {
             Fragment userListsFragment;
             UserList model;
 
+            //Constructor:
             public UserListViewHolder(View itemView) {
                 super(itemView);
                 ivProfile = (ImageView) itemView.findViewById(R.id.ivProfile);
@@ -116,11 +113,10 @@ public class UserListFragment extends Fragment {
                 fabShare = (FloatingActionButton) itemView.findViewById(R.id.fabShare);
                 fabShare.setOnClickListener(this);
             }
-
             @Override
             public void onClick(View v) {
                 try {
-                    ShareFragment dialog = new ShareFragment();
+                    ShareFragment dialog = ShareFragment.newInstance(model);
                     dialog.show(userListsFragment.getChildFragmentManager(), "shareDialog");
                 } catch (Exception e) {
                     e.printStackTrace();
