@@ -1,0 +1,32 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="israel.shoppingfun.fragment.ListProductsFragment">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvProducts"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+         />
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:id="@+id/fabAddProduct"
+        app:srcCompat="@drawable/ic_edit_black_24dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+       />
+
+    <EditText
+        android:id="@+id/etProductName"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/fabAddProduct"
+        android:layout_marginRight="8dp"
+        android:hint="Product Name..."
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

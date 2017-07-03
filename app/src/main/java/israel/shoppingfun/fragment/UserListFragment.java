@@ -111,17 +111,29 @@ public class UserListFragment extends Fragment {
                 ivProfile = (ImageView) itemView.findViewById(R.id.ivProfile);
                 tvListName = (TextView) itemView.findViewById(R.id.tvListName);
                 fabShare = (FloatingActionButton) itemView.findViewById(R.id.fabShare);
+                itemView.setOnClickListener(this);
                 fabShare.setOnClickListener(this);
             }
             @Override
             public void onClick(View v) {
-                try {
-                    ShareFragment dialog = ShareFragment.newInstance(model);
-                    dialog.show(userListsFragment.getChildFragmentManager(), "shareDialog");
-                } catch (Exception e) {
-                    e.printStackTrace();
+                if (v == fabShare) {
+                    try {
+                        ShareFragment dialog = ShareFragment.newInstance(model);
+                        dialog.show(userListsFragment.getChildFragmentManager(), "shareDialog");
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }else{
+                    ListProductsFragment productsFragment =  ListProductsFragment.newInstance(model);
+
+                    userListsFragment.getActivity().getSupportFragmentManager().
+                            beginTransaction().
+                            replace(R.id.container, productsFragment).
+                            addToBackStack("ListProducts").
+                            commit();
                 }
             }
         }
     }
 }
+
