@@ -6,41 +6,39 @@ import android.os.Parcelable;
 /**
  * Created by hackeru on 03/07/2017.
  */
-
+//Ignorance is bliss
 public class Product implements Parcelable {
     private String name;
     private String addedBy;
     private boolean purchased;
 
+    //Constructor for POJO:
     public Product() {
     }
 
+    //Constructor:
     public Product(String name, String addedBy, boolean purchased) {
         this.name = name;
         this.addedBy = addedBy;
         this.purchased = purchased;
     }
 
+    //getters and setters:
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
-
     public String getAddedBy() {
         return addedBy;
     }
-
     public void setAddedBy(String addedBy) {
         this.addedBy = addedBy;
     }
-
     public boolean isPurchased() {
         return purchased;
     }
-
     public void setPurchased(boolean purchased) {
         this.purchased = purchased;
     }
@@ -53,7 +51,6 @@ public class Product implements Parcelable {
                 ", purchased=" + purchased +
                 '}';
     }
-
 
     @Override
     public int describeContents() {
